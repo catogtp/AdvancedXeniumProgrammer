@@ -47,10 +47,12 @@ https://www.pishop.us/product/raspberry-pi-zero-w/
 ## PROGRAMMING THE XENIUM CPLD AND/OR FLASH MEMORY (STANDALONE)
 
 - After the PI has fully booted and the green led is on...
-    - Press the FIRST button to program both ICs. (both ICs must be inserted into their respective sockets)
-    - Hold the FIRST button to program the CPLD with the Bit Bang firmware. (Only the CPLD must be inserted, Flash is optional)
-    - Press the SECOND button to program the flash chip. (**The CPLD must be present and have the Bit Bang firmware loaded or this will fail.  Both Chips must be inserted)
-    - Press the THIRD button to program the CPLD with the OpenXenium Firmware. (Only the CPLD must be inserted, Flash is optional)
+    - Press the FIRST button to program the OpenXenium with XeniumOS.
+    - Hold the FIRST button to program the OpenXenium with PrometheOS.
+    - Press the SECOND button to program the flash chip with XeniumOS. (**The CPLD must be programmed with the Bit Bang firmware or this will fail.)
+    - Hold the SECOND button to program the flash chip with PrometheOS. (**The CPLD must be programmed with the Bit Bang firmware or this will fail.)
+    - Press the THIRD button to program the CPLD with the OpenXenium Firmware.
+    - Hold the THIRD button to program the CPLD with the BitBang Firmware.
     - Press the FOURTH button to clear any errors.
     - Hold the FOURTH button to shutdown the Raspberry Pi.
 
