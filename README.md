@@ -83,7 +83,7 @@ This PCB design is based on his original work and the work of Ryzee119's OpenXen
 
 - You can use the FREE Eagle PCB to load this up or just use the gerber files to have the PCB made at OSH Park!
 
-![RPI PXB](hardware/RaspberryPIZero/images/rpi-top.png)
+![RPI PCB](hardware/RaspberryPiZero/images/rpi-top.png)
 
 
 --------------
