@@ -1,4 +1,4 @@
-/* Custom 4-bit "BitBus"
+/* Onion Omega2+ implementation of Custom 4-bit "BitBus"
 
 Copyright (C) 2019-2020 Koos du Preez (kdupreez@hotmail.com)
 
@@ -17,43 +17,31 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#ifndef XK_BITBUS_
-#define XK_BITBUS_
+#ifndef XK_BITBUS_OMEGA2_
+#define XK_BITBUS_OMEGA2_
 
 #include <stdint.h>
-#include <string>
+
+#include "BitBus.hpp"
+#include "FastGpioOmega2.hpp"
 
 namespace XK
 {
-    enum BusMode
-    {
-        BITBUS_WRITE = 0,
-        BITBUS_READ = 1
-    };
-
-    enum GPIOMode
-    {
-        GPIO_IN = 0,
-        GPIO_OUT = 1
-    };
-
-    class BitBus 
+    class BitBusOmega2 : public BitBus 
     {
         public:
-            BitBus();
-            void SetPlatformDelay(bool delay_enabled);
+            BitBusOmega2();
+            void DelayMicroseconds(uint64_t usec);
+            std::string GetHardwareString();
+            void SetGPIOMode(GPIOMode gpiomode);
+            void Clock();
+            void SetBusMode(BusMode busmode);
+            void WriteByte(const uint8_t& data);
+            uint8_t ReadByte();
 
-            virtual void DelayMicroseconds(uint64_t usec) = 0;
-            virtual std::string GetHardwareString() = 0;
-            virtual void SetGPIOMode(GPIOMode gpiomode) = 0;
-            virtual void Clock() = 0;;
-            virtual void SetBusMode(BusMode busmode) = 0;
-            virtual void WriteByte(const uint8_t& data) = 0;
-            virtual uint8_t ReadByte() = 0;
-
-        protected:
-            bool platform_delay_;
-            virtual void InitGPIO() = 0;
+        private:
+            void InitGPIO();
+            FastGpioOmega2 omega_;
     };
 }
 
