@@ -63,7 +63,7 @@ if (which g++ || grep -q "g++" ); then
     chmod 755 FlashOnly
     chmod 755 xenium-programmer-smd
     chmod 755 OX-Only_SMD
-    chmod 755 xeniumListenerCHIP
+    chmod 755 xeniumListenerAdvanced
 
     echo -e '\n** INSTALL COMPLETE **\n'
 
